@@ -1,0 +1,9 @@
+<!doctype html> <html> <head> <meta charset="utf-8"> <title>ingresosApp</title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <script src="https://use.fontawesome.com/64b53ddd5b.js"></script> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.3a4d7732.css"> <link rel="stylesheet" href="styles/main.04793c4e.css"> </head> <body ng-app="ingresosApp"> <div ng-include="'views/menu.html'" ng-controller="menuCtrl"></div> <!--[if lte IE 8]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <div class="container-fluid"> <div ng-view=""></div> </div> <div ng-include="'views/footer.html'" ng-controller="footerCtrl"></div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+      (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+      r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+    }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');</script> <script src="scripts/vendor.d90d918f.js"></script> <script src="scripts/scripts.d0bd2736.js"></script> </body> <script src="scripts/extras.32f93689.js"></script> <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script> </html>

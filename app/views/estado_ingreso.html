@@ -1,0 +1,35 @@
+<br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>ESTADO DE INGRESOS</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#estado_ingreso" data-toggle="tab">Ingreso Registrado</a>
+        </li>
+        <li><a href="#aprobado_ingreso" data-toggle="tab">Ingreso Aprobado</a>
+        </li>
+        <li><a href="#anulado_ingreso" data-toggle="tab">Ingreso Anulado</a>
+        </li>
+    <!--    <li><a href="#rechazado_ingreso" data-toggle="tab">Ingreso Rechazado</a>
+    </li> -->
+      </ul>
+      <br><br>
+
+      <div ng-controller="MainCtrl">
+        <div id="grid1" ui-grid="gridOptions" ui-grid-selection class="grid"></div>
+      </div>
+
+      <div align="right"><br>
+        <button type="button" class="btn btn-success" ng-click="selectAll()">Seleccionar Todos</button>
+        <button type="button" class="btn btn-success" ng-click="clearAll()">Limpiar Selección</button>
+        <button type="button" class="btn btn-success" ng-click="getAll()">Aprobar Ingreso</button>
+
+      </div>
+    </p>
+  </div>
+  <div class="panel-footer">
+    Panel Footer
+  </div>
+</div>

@@ -1,0 +1,211 @@
+<br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>CREACIÓN DE INGRESO</h3>
+  </div>
+  <div class="panel-body">
+    <p>
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#create_ingreso" data-toggle="tab"><label>CREACIÓN DE INGRESO</label></a>
+        </li>
+        <li><a href="#create_convenio" data-toggle="tab"><label>CREACIÓN DE CONVENIO</label></a>
+        </li>
+      </ul>
+
+      <div class="col-md-12">
+
+        <div class="col-md-3"><br><br> Entidad de Origen
+          <select class="form-control" ng-model="ingreso.CuentaBancaria" ng-options="entidad.Nombre for entidad in entidades track by entidad.Id">
+            </select>
+        </div>
+
+        <div class="col-md-3"><br><br> Unidad Ejecutora
+          <select class="form-control" ng-model="ingreso.CuentaBancaria" ng-options="entidad.UnidadEjecutora for entidad in entidades track by entidad.Id">
+            </select>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-12">
+        <div class="col-md-3"><br> Consecutivo
+          <input class="form-control" type="text" ng-model="ingreso.Consecutivo" disabled="">
+          <!--Requerido-->
+          <!--Traer por default Consecutivo!!!!!!!!!!!!-->
+        </div>
+        <div class="col-md-3"><br> Vigencia
+          <input class="form-control" type="text" ng-model="ingreso.Vigencia">
+          <!--Requerido-->
+          <!--UTILIZAR SELECT???-->
+        </div>
+
+        <div class="col-md-3"><br> Estado del Acta
+          <input class="form-control" type="text" ng-model="ingreso.EstadoActa">
+          <!--ESTE SOLO DEBERA APARECER CUANDO SE VERIFIQUE Y/O MODIFIQUE VISTA PARA MODIFICAR Y/O EDITAR INFORMACIÓN O VER A DETALLE!!!!-->
+          <!--Provisional-->
+          <!--    </label> -->
+        </div>
+
+      </div>
+
+
+      <div class="col-md-12">
+        <div class="col-md-3"><br><br> Fecha de Creación del Ingreso
+          <md-datepicker ng-model="FechaIngreso"></md-datepicker><!--Requerido-->
+        </div>
+
+        <div class="col-md-4"><br><br> Fecha de Consignación
+          <md-datepicker ng-model="FechaConsignacion"></md-datepicker><!--Requerido-->
+        </div>
+      </div>
+
+
+      <div class="col-md-12">
+      <div class="col-md-3"><br> Forma de Ingreso
+        <!--Tipo de Documento consignación CSN!!!!!!-->
+        <select class="form-control" ng-model="ingreso.FormaIngreso" ng-options="forma_ingreso.Nombre for forma_ingreso in forma_ingreso track by forma_ingreso.Id">
+          </select>
+      </div>
+
+      <div class="col-md-3"><br> Valor Total de la Consignación
+        <input class="form-control" type="text" ng-model="ingreso.Valor"></td><!--Requerido-->
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-md-12"><br>
+
+    <h3><center><label>Origen del Ingreso</label></center></h3>
+    <hr>
+    <div   class="col-md-2">
+      Tipo de Documento
+      <select class="form-control" ng-model="ingreso.InformacionPersonaNatural" ng-options="informacion_persona.TipoDocumento for informacion_persona in informacion_persona_natural track by informacion_persona.Id">
+          </select>
+    </div>
+
+    <div class="col-md-3">
+      Identificación
+      <select class="form-control" ng-model="ingreso.InformacionPersonaNatural" ng-options="informacion_persona.NumDocumentoPersona for informacion_persona in informacion_persona_natural">
+          </select>
+    </div>
+
+    <div class="col-md-4">
+      Tercero
+      <select class="form-control" ng-model="ingreso.InformacionPersonaNatural" ng-options="informacion_persona.PrimerNombre for informacion_persona in informacion_persona_natural">
+          </select>
+    </div>
+
+  </div>
+  <div class="col-md-12"><br>
+
+    <h3><center><label>Entidad Financiera Relacionada</label></center></h3>
+    <hr>
+
+    <div class="col-md-4"><br> Entidad Financiera
+      <select class="form-control" ng-model="ingreso.CuentaBancaria" ng-options="entidad.Nombre for entidad in entidades track by entidad.Id">
+            </select>
+    </div>
+
+    <div class="col-md-3"><br> Tipo de Cuenta Bancaria
+      <select class="form-control" ng-model="ingreso.CuentaBancaria" ng-options="entidad.TipoCuenta for entidad in entidades track by entidad.Id">
+            </select>
+    </div>
+
+    <div class="col-md-4"><br> Número de Cuenta Bancaria
+      <select class="form-control" ng-model="ingreso.CuentaBancaria" ng-options="entidad.NumeroCuenta for entidad in entidades track by entidad.Id">
+            </select>
+    </div>
+  </div>
+
+  <div class="col-md-12"><br>
+    <h3><center><label>Imputación Contable</label></center></h3>
+    <hr>
+
+    <div class="col-md-9"><br> Concepto
+      <select class="form-control" ng-model="ingreso.Concepto" ng-options="concepto.Codigo for concepto in conceptos track by concepto.Id">
+            </select>
+    </div>
+    <div class="col-md-1"><br><br>
+      <center><button type="button" class="btn btn-primary btn-circle"><i class="glyphicon-plus"></i></button></center>
+    </div>
+
+    <div class="col-md-4"><br> Cuenta Contable Débito
+      <select class="form-control">
+              <option></option>
+              <option></option>
+            </select>
+    </div>
+    <div class="col-md-5"><br> Valor de la Cuenta Contable Débito
+      <input class="form-control" type="text">
+    </div>
+
+    <div class="col-md-4  "><br> Cuenta Contable Crédito
+      <select class="form-control">
+              <option></option>
+              <option></option>
+            </select>
+    </div>
+
+    <div class="col-md-5"><br> Valor de la Cuenta Contable Crédito
+      <input class="form-control" type="text">
+    </div>
+    <div class="col-md-1"><br><br>
+      <center><button type="button" class="btn btn-primary btn-circle"><i class="glyphicon-plus"></i></button></center>
+    </div>
+
+
+  </div>
+
+  <div class="col-md-12"><br>
+    <h3><center><label>Imputación Presupuestal</label></center></h3>
+    <hr>
+    <div class="col-md-3"><br> Codigo del Rubro
+      <select class="form-control" ng-model="ingreso_rubro.Rubro" ng-options="codigo as option.Rubro.Codigo for option in rubros"><!--PENDIENTE POR TRAER!!!!!!!!-->
+                <option value="">--Elija el código del rubro--</option>
+            </select>
+    </div>
+    <div class="col-md-4"><br> Nombre del Rubro
+      <input class="form-control" type="text">
+    </div>
+    <div class="col-md-3"><br> Valor del Rubro
+      <input class="form-control" type="text">
+    </div>
+    <div class="col-md-1"><br><br>
+      <center><button type="button" class="btn btn-primary btn-circle"><i class="glyphicon-plus"></i></button></center>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="panel-body">
+    <hr>
+    <div class="col-md-4"><br><br>
+      <label>Observaciones</label>
+      <textarea class="form-control" rows="5" ng-model="ingreso.Observaciones"></textarea>
+    </div>
+
+    <div class="col-md-4"><br><br>
+      <label>Elaborado por</label>
+      <input class="form-control" type="text" ng-model="ingreso.QuienElaboro"><br>
+
+      <label>Revisado por</label>
+      <input class="form-control" type="text" ng-model="ingreso.QuienReviso">
+    </div>
+<div class="col-md-4"><br><br><br>
+    <button type="button" class="btn btn-primary" ng-click="edit_ingreso(ingreso)">Guardar</button>
+</div>
+
+</div>
+
+</p>
+
+<!--<pre>{{ingreso | json}}</pre> -->
+
+<div class="panel-footer">
+  Panel Footer
+</div>
+
+</div>
